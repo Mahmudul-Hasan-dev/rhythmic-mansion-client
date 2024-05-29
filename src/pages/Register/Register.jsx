@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 import Swal from 'sweetalert2'
 import { AuthContext } from "../../providers/AuthProvider";
 import {  Link, useNavigate } from "react-router-dom";
+import SocialLogin from '../Shared/SocialLogin/SocialLogin';
 
 const Register = () => {
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
@@ -54,7 +55,7 @@ const Register = () => {
    
     return (
         <div>
-            <h1>Registration Page</h1>
+            <h1 className='text-center mt-5'>Registration Page</h1>
             <Container className='w-50 bg-light p-5 my-5'>
             <Form onSubmit={handleSubmit(onSubmit)} >
                 <Form.Group className="mb-3" >
@@ -99,7 +100,12 @@ const Register = () => {
             </Button>
         </Form>
         <p className="text-center py-3">Already have an account <Link to="/login">Login</Link></p>
-            </Container>
+           
+           
+           <SocialLogin></SocialLogin>
+          
+           
+        </Container>
         </div>
     );
 };

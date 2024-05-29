@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2'
 import { AuthContext } from '../../providers/AuthProvider';
+import SocialLogin from '../Shared/SocialLogin/SocialLogin';
 
 
 const Login = () => {
@@ -58,7 +59,9 @@ const Login = () => {
             </Button>
         </Form>
         <p className='text-center py-3'>New Here? <Link to="/register">Create an account</Link> </p>
-            </Container>
+           
+           <SocialLogin></SocialLogin>
+         </Container>
         </div>
     );
 };

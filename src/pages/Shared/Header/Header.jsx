@@ -21,7 +21,11 @@ const Header = () => {
               <Link to="/">Home</Link>
               <Link to="/instructor">Instructor</Link>
               <Link to="/classes">Classes</Link>
-              <Link to="/">Dashboard</Link>
+              {
+                user &&
+                <Link to="/">Dashboard</Link>
+              }
+              
             </Nav>
             <Nav>
                 
@@ -30,7 +34,6 @@ const Header = () => {
                
                <img src={user?.photoURL} alt="" width={'50px'} />
                 <Button onClick={handleLogOut}  >LogOut</Button>
-               
             </> : <>
                 <Link to='/login'>
                     <Button >Login</Button>
