@@ -13,5 +13,7 @@
 * react-icons
 * firebase
 * react-hook-form
+* tanstack/react-query
+* axios
 
 # Live link:
