@@ -7,7 +7,7 @@ import privateImg from '../../../assets/musicGroup/private.jpg'
 
 const MusicGroup = () => {
     return (
-        <div>
+        <div className='mt-5'>
             <Container className='bg-light py-3 mb-5 px-5'>
       
                 <Row  className='text-center '>

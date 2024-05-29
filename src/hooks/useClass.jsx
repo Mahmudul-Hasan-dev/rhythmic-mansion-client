@@ -11,6 +11,8 @@ const useClass = () => {
             return res.data;
         }
     })
+  
+
 
 
     return [classes, loading, refetch]

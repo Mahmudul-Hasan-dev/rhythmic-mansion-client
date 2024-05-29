@@ -7,7 +7,7 @@ const PopulerClasses = () => {
 const [classes] = useClass();
 const popularClasses = classes;
     return (
-        <div className='cards-container'>
+        <div className='popular-class-container mb-5'>
     
           
             {
