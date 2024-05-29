@@ -1,9 +1,9 @@
 import React, { useContext } from 'react';
-import { Button ,Form} from 'react-bootstrap';
+import { Button ,Container,Form} from 'react-bootstrap';
 import { useForm } from "react-hook-form";
 import Swal from 'sweetalert2'
 import { AuthContext } from "../../providers/AuthProvider";
-import {  useNavigate } from "react-router-dom";
+import {  Link, useNavigate } from "react-router-dom";
 
 const Register = () => {
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
@@ -54,7 +54,8 @@ const Register = () => {
    
     return (
         <div>
-            register page
+            <h1>Registration Page</h1>
+            <Container className='w-50 bg-light p-5 my-5'>
             <Form onSubmit={handleSubmit(onSubmit)} >
                 <Form.Group className="mb-3" >
                     <Form.Label>Name</Form.Label>
@@ -97,6 +98,8 @@ const Register = () => {
              Register
             </Button>
         </Form>
+        <p className="text-center py-3">Already have an account <Link to="/login">Login</Link></p>
+            </Container>
         </div>
     );
 };
