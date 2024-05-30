@@ -12,7 +12,7 @@ const Header = () => {
         .catch(error => console.log(error));
 }
     return (
-        <Navbar expand="lg" bg="primary" data-bs-theme="dark">
+        <Navbar expand="lg" bg="primary" data-bs-theme="dark" >
         <Container>
           <Navbar.Brand href="/"> RHYTHMIC MANSION</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -23,7 +23,7 @@ const Header = () => {
               <Link to="/classes">Classes</Link>
               {
                 user &&
-                <Link to="/">Dashboard</Link>
+                <Link to="/dashboard">Dashboard</Link>
               }
               
             </Nav>
