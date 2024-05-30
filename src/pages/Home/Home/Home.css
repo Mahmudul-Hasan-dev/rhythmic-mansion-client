@@ -10,3 +10,15 @@
     gap: 40px;
     
 }
+.all-class-container{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 40px;
+    
+}
+.instructor-container{
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    gap: 40px;
+    
+}
