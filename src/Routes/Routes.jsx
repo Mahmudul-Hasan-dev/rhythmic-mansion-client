@@ -10,6 +10,8 @@ import AllUsers from "../pages/Dashboard/AllUsers/AllUsers";
 import Dashboard from "../layout/Dashboard";
 import PrivateRoute from "./PrivateRoute";
 import AddClass from "../pages/Dashboard/AddClass/AddClass";
+import AdminRoute from "./AdminRoute";
+import InstructorRoute from "./InstructorRoute";
 
 
 
@@ -51,13 +53,15 @@ const router = createBrowserRouter([
       element:<PrivateRoute> <Dashboard></Dashboard></PrivateRoute>,
       errorElement: <ErrorPage />,
       children: [
+        // admin dashboard
         {
           path: "allUsers",
-          element: <PrivateRoute><AllUsers></AllUsers></PrivateRoute>
+          element: <AdminRoute><AllUsers></AllUsers></AdminRoute>
         },
+        // instructor dashboard
         {
           path: "addClass",
-          element: <PrivateRoute><AddClass></AddClass></PrivateRoute>
+          element: <InstructorRoute><AddClass></AddClass></InstructorRoute>
         },
 
       ]

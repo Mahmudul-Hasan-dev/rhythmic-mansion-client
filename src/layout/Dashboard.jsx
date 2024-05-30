@@ -5,19 +5,20 @@ import Header from '../pages/Shared/Header/Header';
 import Footer from '../pages/Shared/Footer/Footer';
 import useAdmin from "../hooks/useAdmin";
 import { FaChalkboard, FaCreditCard, FaGuitar, FaHouse, FaMusic, FaUsers } from 'react-icons/fa6';
+import useSingleInstructor from '../hooks/useSingleInstructor';
 
 
 // admin@music.com A1234#
 
 const Dashboard = () => {
   const [isAdmin] = useAdmin();
-  const isInstructor = true
+  const [isInstructor] = useSingleInstructor();
     return (
         <div>
             <Header></Header>
              <Container fluid>
         <Row>
-          {isAdmin?
+          {isAdmin? 
           <Col xs={2} className=" border-right bg-light " style={{minHeight: '50vh'}}>
           <Nav className="flex-column pt-3" >
             <Link style={{textDecoration: 'none'}} className='text-dark fs-5 ' to='/' ><FaHouse /> Dashboard</Link>
