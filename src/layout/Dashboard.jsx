@@ -3,42 +3,56 @@ import { Col, Container, Nav, Row } from 'react-bootstrap';
 import { Link, Outlet } from 'react-router-dom';
 import Header from '../pages/Shared/Header/Header';
 import Footer from '../pages/Shared/Footer/Footer';
+import useAdmin from "../hooks/useAdmin";
+import { FaChalkboard, FaCreditCard, FaGuitar, FaHouse, FaMusic, FaUsers } from 'react-icons/fa6';
+
 
 // admin@music.com A1234#
 
 const Dashboard = () => {
+  const [isAdmin] = useAdmin();
+  const isInstructor = true
     return (
         <div>
             <Header></Header>
              <Container fluid>
         <Row>
-               {/* Admin Sidebar */}
-        <Col xs={2} className=" border-right bg-light " style={{minHeight: '50vh'}}>
-            <Nav className="flex-column pt-3" >
-              <Link style={{textDecoration: 'none'}} className='text-dark fs-4' to='/' >Dashboard</Link>
-              <Link style={{textDecoration: 'none'}} className='text-dark fs-4' to='/' >Manage Classes</Link>
-              <Link style={{textDecoration: 'none'}} className='text-dark fs-4' to='/dashboard/allUsers' >Manage Users</Link>
+          {isAdmin?
+          <Col xs={2} className=" border-right bg-light " style={{minHeight: '50vh'}}>
+          <Nav className="flex-column pt-3" >
+            <Link style={{textDecoration: 'none'}} className='text-dark fs-5 ' to='/' ><FaHouse /> Dashboard</Link>
+            <Link style={{textDecoration: 'none'}} className='text-dark fs-5 ' to='/' > <FaChalkboard /> Manage Classes</Link>
+            <Link style={{textDecoration: 'none'}} className='text-dark fs-5 ' to='/dashboard/allUsers' ><FaUsers/> Manage Users</Link>
 
-            </Nav>
-          </Col>
+          </Nav>
+        </Col> :  isInstructor ?
+           <Col xs={2}  className="bg-light border-right" style={{minHeight: '50vh'}}>
+           <Nav className="flex-column  pt-3">
+           <Link style={{textDecoration: 'none'}} className='text-dark fs-5 ' to='/' ><FaHouse /> Dashboard</Link>
+           <Link style={{textDecoration: 'none'}} className='text-dark fs-5 ' to='/' ><FaChalkboard /> Add a Class</Link>
+           <Link style={{textDecoration: 'none'}} className='text-dark fs-5 ' to='/' ><FaMusic /> My Classes</Link>
+           
+           </Nav>
+           </Col> : 
+           
+
+            <Col xs={2}  className="bg-light border-right" style={{minHeight: '50vh'}}>
+             <Nav className="flex-column  pt-3">
+               <Link style={{textDecoration: 'none'}} className='text-dark fs-5 ' to='/' ><FaHouse /> Dashboard</Link>
+               <Link style={{textDecoration: 'none'}} className='text-dark fs-5 ' to='/' > <FaChalkboard /> My Selected Classes</Link>
+               <Link style={{textDecoration: 'none'}} className='text-dark fs-5 ' to='/' ><FaGuitar /> My Enrolled Classes</Link>
+               <Link style={{textDecoration: 'none'}} className='text-dark fs-5 ' to='/' ><FaCreditCard /> Payment History</Link>
+             </Nav>
+           </Col> 
+         
+           
+
+        }
+               {/* Admin Sidebar */}
+        
              {/* Instructor Sidebar */}
-            {/* <Col xs={2} id="sidebar-wrapper" className="bg-light border-right">
-                <Nav className="flex-column">
-                <Link to='/' >Dashboard</Link>
-                <Link to='/' >Add a Class</Link>
-                <Link to='/' >My Classes</Link>
-                
-                </Nav>
-          </Col> */}
-          {/* Student Sidebar */}
-          {/* <Col xs={2} id="sidebar-wrapper" className="bg-light border-right">
-            <Nav className="flex-column">
-              <Link to='/' >Dashboard</Link>
-              <Link to='/' >My Selected Classes</Link>
-              <Link to='/' >My Enrolled Classes</Link>
-              <Link to='/' >Payment History</Link>
-            </Nav>
-          </Col> */}
+            {/*  */}
+          
 
           
           {/* Main Content */}
