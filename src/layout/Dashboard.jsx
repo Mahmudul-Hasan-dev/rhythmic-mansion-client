@@ -27,9 +27,9 @@ const Dashboard = () => {
           </Nav>
         </Col> :  isInstructor ?
            <Col xs={2}  className="bg-light border-right" style={{minHeight: '50vh'}}>
-           <Nav className="flex-column  pt-3">
-           <Link style={{textDecoration: 'none'}} className='text-dark fs-5 ' to='/' ><FaHouse /> Dashboard</Link>
-           <Link style={{textDecoration: 'none'}} className='text-dark fs-5 ' to='/' ><FaChalkboard /> Add a Class</Link>
+           <Nav className="flex-column  pt-5">
+           <Link style={{textDecoration: 'none'}} className='text-dark fs-5 ' to='/' ><FaHouse /> Dashboard</Link> <br />
+           <Link style={{textDecoration: 'none'}} className='text-dark fs-5 ' to='/dashboard/addClass' ><FaChalkboard /> Add a Class</Link> <br />
            <Link style={{textDecoration: 'none'}} className='text-dark fs-5 ' to='/' ><FaMusic /> My Classes</Link>
            
            </Nav>
@@ -56,7 +56,7 @@ const Dashboard = () => {
 
           
           {/* Main Content */}
-          <Col xs={10} id="page-content-wrapper">
+          <Col xs={10} className='p-5'>
             <h2>Dashboard Content</h2>
             <Outlet></Outlet>
           </Col>

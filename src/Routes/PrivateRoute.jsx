@@ -1,6 +1,7 @@
 
 import { Navigate, useLocation } from "react-router";
 import useAuth from "../hooks/useAuth";
+import { Spinner } from "react-bootstrap";
 
 
 const PrivateRoute = ({ children }) => {
@@ -9,7 +10,7 @@ const PrivateRoute = ({ children }) => {
     const location = useLocation();
 
     if(loading){
-        return <progress className="progress w-56"></progress>
+        return  <Spinner animation="border" variant="danger" />
     }
 
     if (user) {
