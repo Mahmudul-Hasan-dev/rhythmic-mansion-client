@@ -17,7 +17,7 @@ const SocialLogin = () => {
             console.log(loggedUser);
 
             const savedUser = {name: loggedUser.displayName, email: loggedUser.email, photo: loggedUser.photoURL}
-            fetch(`http://localhost:5000/users`,{
+            fetch(`https://rhythmic-mansion-server.vercel.app/users`,{
                 method:'POST',
                 headers:{
                     'content-type':'application/json'
