@@ -4,8 +4,8 @@ import useAllClass from '../../../hooks/useAllClass';
 import useInstructor from '../../../hooks/useInstructor';
 
 const ManageClass = () => {
-    const [classes, loading, refetch] =useAllClass();
-    const [instructors]= useInstructor();
+    const [classes] =useAllClass();
+    
    
     return (
         <div>
@@ -16,7 +16,6 @@ const ManageClass = () => {
           <th>Image</th>
           <th>Class</th>
           <th> Instructor</th>
-          <th>Instructor Email</th>
           <th>Available Seats</th>
           <th>Price</th>
           <th>Status</th>
@@ -33,8 +32,6 @@ const ManageClass = () => {
                 </td>
                 <td>{cls.name}</td>
                 <td>{cls.instructor_name} </td>
-                
-               <td></td>
                 <td>{cls.seats} </td>
                 <td>{cls.price} </td>
                 <td> </td>

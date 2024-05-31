@@ -8,7 +8,7 @@ import { FaTrashAlt } from 'react-icons/fa';
 const MyClasses = () => {
     const [allClasses]= useAllClasses();
     const {user} = useAuth();
-    const myClasses = allClasses.filter(cls => cls.instructor_name === user?.displayName);
+    const myClasses = allClasses.filter(cls => cls.email === user?.email);
    
     const handleDeleteClass = myClasses => {
         Swal.fire({

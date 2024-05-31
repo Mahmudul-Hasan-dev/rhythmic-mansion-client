@@ -9,7 +9,7 @@ import useSingleInstructor from '../hooks/useSingleInstructor';
 import { Helmet } from 'react-helmet-async';
 
 
-// admin@music.com A1234#
+
 
 const Dashboard = () => {
   const [isAdmin] = useAdmin();
@@ -53,10 +53,7 @@ const Dashboard = () => {
            
 
         }
-               {/* Admin Sidebar */}
-        
-             {/* Instructor Sidebar */}
-            {/*  */}
+              
           
 
           
