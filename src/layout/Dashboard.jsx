@@ -31,7 +31,7 @@ const Dashboard = () => {
            <Nav className="flex-column  pt-5">
            <Link style={{textDecoration: 'none'}} className='text-dark  ' to='/' ><FaHouse /> Dashboard</Link> <br />
            <Link style={{textDecoration: 'none'}} className='text-dark  ' to='/dashboard/addClass' ><FaChalkboard /> Add a Class</Link> <br />
-           <Link style={{textDecoration: 'none'}} className='text-dark ' to='/' ><FaMusic /> My Classes</Link>
+           <Link style={{textDecoration: 'none'}} className='text-dark ' to='/dashboard/myClass' ><FaMusic /> My Classes</Link>
            
            </Nav>
            </Col> : 
@@ -40,7 +40,7 @@ const Dashboard = () => {
             <Col xs={2}  className="bg-light border-right" style={{minHeight: '50vh'}}>
              <Nav className="flex-column  pt-5">
                <Link style={{textDecoration: 'none'}} className='text-dark  ' to='/' ><FaHouse /> Dashboard</Link><br/>
-               <Link style={{textDecoration: 'none'}} className='text-dark  ' to='/' > <FaChalkboard /> My Selected Classes</Link><br/>
+               <Link style={{textDecoration: 'none'}} className='text-dark  ' to='/dashboard/selectedClass' > <FaChalkboard /> My Selected Classes</Link><br/>
                <Link style={{textDecoration: 'none'}} className='text-dark ' to='/' ><FaGuitar /> My Enrolled Classes</Link><br/>
                <Link style={{textDecoration: 'none'}} className='text-dark  ' to='/' ><FaCreditCard /> Payment History</Link>
              </Nav>

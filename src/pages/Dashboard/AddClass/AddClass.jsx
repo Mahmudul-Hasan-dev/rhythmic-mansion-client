@@ -13,7 +13,7 @@ const image_hosting_url = `https://api.imgbb.com/1/upload?expiration=600&key=${i
 
 const AddClass = () => {
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
-    const {user}= useAuth;
+    const {user} = useAuth();
     const axiosSecure = useAxiosSecure();
     const axiosPublic = useAxios();
           
@@ -30,8 +30,8 @@ const AddClass = () => {
             
             const classData = {
                 name: data.name,
-                instructor_name: data.instructor_name,
-                email:data.email,
+                instructor_name: user.displayName,
+                email:user.email,
                 seats: data.seats,
                 price: parseFloat(data.price),
                 image: res.data.data.display_url
@@ -67,7 +67,7 @@ const AddClass = () => {
             </Form.Group>
             <Form.Group className="mb-3">
                 <Form.Label>Instructor name</Form.Label>
-                <Form.Control type="text"  {...register("instructor_name")} name="instructor_name" placeholder="Instructor name" defaultValue={user?.name} />
+                <Form.Control type="text"  {...register("instructor_name")} name="instructor_name" placeholder="Instructor name" defaultValue={user?.displayName} />
                
             </Form.Group>
             <Form.Group className="mb-3" >

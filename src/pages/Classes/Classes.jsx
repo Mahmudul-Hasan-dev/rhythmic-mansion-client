@@ -21,6 +21,7 @@ const Classes = ({cls}) => {
                   classID: _id,
                   email: user.email,
                   name,
+                  instructor: instructor_name,
                   image,
                   price
               }
