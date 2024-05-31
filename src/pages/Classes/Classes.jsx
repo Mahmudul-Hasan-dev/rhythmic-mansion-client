@@ -6,6 +6,8 @@ import useAuth from '../../hooks/useAuth';
 import useCart from '../../hooks/useCart';
 import useAdmin from '../../hooks/useAdmin';
 import useSingleInstructor from '../../hooks/useSingleInstructor';
+import { Helmet } from 'react-helmet-async';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 const Classes = ({cls}) => {
     const [isAdmin] = useAdmin();
@@ -13,7 +15,10 @@ const Classes = ({cls}) => {
     const {_id, name ,image,instructor_name,seats,price} = cls;
     const [,refetch]= useCart();
     const {user} = useAuth();
-    
+    const navigate = useNavigate();
+    const location = useLocation();
+
+   const from = location.state?.from?.pathname || "/";
    
     const axiosSecure = useAxiosSecure()
     const handleSelect = cls => {
@@ -65,6 +70,9 @@ const Classes = ({cls}) => {
       }
     return (
         <>
+         <Helmet>
+                <title>Rhythmic Mansion | Class</title>
+            </Helmet>
         {  seats === 0 ?
             
             <Card className='bg-danger' style={{ width: '18rem' }}>

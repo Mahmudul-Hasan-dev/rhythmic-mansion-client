@@ -6,6 +6,7 @@ import Footer from '../pages/Shared/Footer/Footer';
 import useAdmin from "../hooks/useAdmin";
 import { FaChalkboard, FaCreditCard, FaGuitar, FaHouse, FaMusic, FaUsers } from 'react-icons/fa6';
 import useSingleInstructor from '../hooks/useSingleInstructor';
+import { Helmet } from 'react-helmet-async';
 
 
 // admin@music.com A1234#
@@ -15,6 +16,9 @@ const Dashboard = () => {
   const [isInstructor] = useSingleInstructor();
     return (
         <div>
+           <Helmet>
+                <title>Rhythmic Mansion | Dashboard</title>
+            </Helmet>
             <Header></Header>
              <Container fluid>
         <Row>
@@ -58,7 +62,7 @@ const Dashboard = () => {
           
           {/* Main Content */}
           <Col xs={10} className='p-5'>
-            <h2>Dashboard Content</h2>
+            
             <Outlet></Outlet>
           </Col>
         </Row>

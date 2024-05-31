@@ -2,11 +2,15 @@ import React from 'react';
 
 import { Card, Container } from 'react-bootstrap';
 import useInstructor from '../../hooks/useInstructor';
+import { Helmet } from 'react-helmet-async';
 
 const Instructors = () => {
     const [instructors]= useInstructor();
     return (
         <>
+         <Helmet>
+                <title>Rhythmic Mansion | Instructor</title>
+            </Helmet>
         <h1 className='text-center  mt-5 fs-1 bg-light py-3'>Our Instructors</h1>
         <div className='instructor-container my-5'>
     

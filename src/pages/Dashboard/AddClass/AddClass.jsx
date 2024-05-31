@@ -56,7 +56,7 @@ const AddClass = () => {
     
     return (
         <div>
-            class
+           
             <Container className='w-50 bg-light p-5 '>
             <Form onSubmit={handleSubmit(onSubmit)}>
 
