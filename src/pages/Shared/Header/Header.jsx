@@ -1,15 +1,17 @@
 import React from 'react';
 import { Button, Container, Nav, Navbar } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './Header.css'
 import useAuth from '../../../hooks/useAuth';
 
 const Header = () => {
   const {user ,logOut}= useAuth();
+  const navigate = useNavigate();
   const handleLogOut = () => {
     logOut()
         .then(() => { })
         .catch(error => console.log(error));
+        navigate('/login');
 }
     return (
         <Navbar expand="lg" bg="primary" data-bs-theme="dark" >
