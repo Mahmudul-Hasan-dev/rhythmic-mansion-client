@@ -4,7 +4,7 @@ import { useQuery } from "@tanstack/react-query";
 
 const useAllClass = () => {
     const axiosPublic = useAxios();
-    const {data: classes = [], isPending: loading, refetch} = useQuery({
+    const {data: allClasses = [], isPending: loading, refetch} = useQuery({
         queryKey: ['classes'], 
         queryFn: async() =>{
             const res = await axiosPublic.get('/classes');
@@ -15,7 +15,7 @@ const useAllClass = () => {
 
 
 
-    return [classes, loading, refetch]
+    return [allClasses, loading, refetch]
 };
 
 export default useAllClass;

@@ -1,25 +1,28 @@
 import React from 'react';
 import useAllClass from '../../hooks/useAllClass';
-import AllClasses from './AllClasses';
+import Classes from './Classes';
 
 const AllClassContainer = () => {
   
-    const [classes] = useAllClass();
-   
-    
-   
+    const [allClasses] = useAllClass();
     return (
-        <div>
+        <>
+            <h1 className='mt-5 text-center bg-dark text-light'> All Music Classes</h1>
+        <div  className='all-class-container my-5'>
+           
              {
-               classes && classes.map( cls=> <AllClasses 
-                key={cls._id}
-                cls={cls} 
-                ></AllClasses>
+               allClasses && allClasses.map( cls=> 
+               
+             <Classes
+             key={cls._id}
+             cls={cls}
+             ></Classes>
                  )
                 
              }
              
         </div>
+        </>
     );
 };
 
