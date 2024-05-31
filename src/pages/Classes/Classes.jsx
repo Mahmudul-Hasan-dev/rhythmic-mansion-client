@@ -4,8 +4,12 @@ import useAxiosSecure from '../../hooks/useAxiosSecure';
 import Swal from 'sweetalert2';
 import useAuth from '../../hooks/useAuth';
 import useCart from '../../hooks/useCart';
+import useAdmin from '../../hooks/useAdmin';
+import useSingleInstructor from '../../hooks/useSingleInstructor';
 
 const Classes = ({cls}) => {
+    const [isAdmin] = useAdmin();
+    const [isInstructor] = useSingleInstructor();
     const {_id, name ,image,instructor_name,seats,price} = cls;
     const [,refetch]= useCart();
     const {user} = useAuth();
@@ -60,7 +64,24 @@ const Classes = ({cls}) => {
           }
       }
     return (
-        
+        <>
+        {  seats === 0 ?
+            
+            <Card className='bg-danger' style={{ width: '18rem' }}>
+                <Card.Img variant="top" src={image} height={'200px'} />
+                <Card.Body className='text-white'>
+                    <Card.Title className='fs-1'> {name}</Card.Title>
+                    <Card.Text>
+                    <Card.Title className='fw-bold '>Instructor name:{instructor_name}</Card.Title>
+                        <h3>Available seats: {seats}</h3>
+                        <h3>Price: ${price}</h3>
+                    </Card.Text>
+                    
+                </Card.Body>
+                <Card.Footer>
+                  <Button  disabled variant="light">select</Button>
+                    </Card.Footer>
+            </Card> : 
             <Card style={{ width: '18rem' }}>
                 <Card.Img variant="top" src={image} height={'200px'} />
                 <Card.Body>
@@ -73,10 +94,15 @@ const Classes = ({cls}) => {
                     
                 </Card.Body>
                 <Card.Footer>
-                    <Button  onClick={()=> handleSelect(cls)} variant="primary">select</Button>
-                    </Card.Footer>
+                  {isAdmin || isInstructor ? 
+              <Button  disabled variant="primary">select</Button>     
+:<Button  onClick={()=> handleSelect(cls)} variant="primary">select</Button> }
+                   </Card.Footer>
             </Card>
         
+        
+        }
+        </>
     );
 };
 

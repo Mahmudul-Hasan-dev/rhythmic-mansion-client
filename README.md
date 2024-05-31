@@ -1,10 +1,12 @@
 # RHYTHMIC MANSION
 
--
--
--
--
--
+Music Instrument Classes Website
+
+- can select music classes
+- instructor can add new classes
+- admin can manage users and classes
+- top instructor
+- popular classes 
 
 # Package and Technology
 * bootstrap
@@ -16,5 +18,6 @@
 * tanstack/react-query
 * axios
 * sweetaleart2
+* react-helmet-async
 
 # Live link:
